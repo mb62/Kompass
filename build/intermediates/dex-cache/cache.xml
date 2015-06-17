@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/home/xtian/AndroidStudioProjects/Kompass/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/home/xtian/AndroidStudioProjects/Kompass/app/build/intermediates/pre-dexed/release/classes-af3165faf892dc76c3de1c0d334270cd6bd8a1a1.jar" />
-    </item>
-    <item
-        jar="/home/xtian/AndroidStudioProjects/Kompass/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/home/xtian/AndroidStudioProjects/Kompass/app/build/intermediates/pre-dexed/release/classes-0dfcd0d6d528d1689c4ec6cd01a4c2f9ba9c5e77.jar" />
-    </item>
-    <item
-        jar="/home/xtian/AndroidStudioProjects/Kompass/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jar="/Volumes/Media/Users/christian/git/Kompass/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/home/xtian/AndroidStudioProjects/Kompass/app/build/intermediates/pre-dexed/release/internal_impl-22.2.0-c2d4e200047864957051ec8307a330895729361f.jar" />
+        <dex dex="/Volumes/Media/Users/christian/git/Kompass/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-607ba4e348ecdaa7600a15d7228e7b971457f143.jar" />
     </item>
     <item
-        jar="/home/xtian/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jar="/Volumes/Media/Users/christian/git/Kompass/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Volumes/Media/Users/christian/git/Kompass/app/build/intermediates/pre-dexed/debug/classes-f147df9475891b8dd74702ec7fa14b0123cf02ad.jar" />
+    </item>
+    <item
+        jar="/Volumes/Media/Users/christian/git/Kompass/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Volumes/Media/Users/christian/git/Kompass/app/build/intermediates/pre-dexed/debug/classes-2743373a307e554707ccfc279e3f66e46a58f895.jar" />
+    </item>
+    <item
+        jar="/Users/christian/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/home/xtian/AndroidStudioProjects/Kompass/app/build/intermediates/pre-dexed/release/support-annotations-22.2.0-71397362b8944c01bd86b7eb84ef280df3609cb6.jar" />
+        <dex dex="/Volumes/Media/Users/christian/git/Kompass/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-3cbc18d9e6446eac060190cacf345ff970d4f333.jar" />
     </item>
 
 </items>
