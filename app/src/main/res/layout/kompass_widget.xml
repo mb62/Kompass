@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="@dimen/widget_margin" android:background="#fff">
+
+    <TextView android:id="@+id/appwidget_text" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+        android:text="@string/appwidget_text"
+        android:textColor="#000" android:textSize="24sp" android:textStyle="bold|italic"
+        android:contentDescription="@string/appwidget_text"
+        android:background="#fff"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSettings"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_action_settings" />
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000" android:textSize="24sp" android:textStyle="bold|italic"
+        android:id="@+id/textClock"
+        android:layout_below="@+id/btnSettings"
+        android:layout_alignLeft="@+id/appwidget_text"
+        android:layout_alignStart="@+id/appwidget_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000" android:textSize="18sp" android:textStyle="bold|italic"
+        android:text="Latitude:"
+        android:id="@+id/textView01"
+        android:layout_alignTop="@+id/textView02"
+        android:layout_toLeftOf="@+id/appwidget_text"
+        android:layout_toStartOf="@+id/appwidget_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000" android:textSize="18sp" android:textStyle="bold|italic"
+        android:text="unknown"
+        android:id="@+id/textView02"
+        android:layout_below="@+id/textClock"
+        android:layout_alignLeft="@+id/textClock"
+        android:layout_alignStart="@+id/textClock" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000" android:textSize="18sp" android:textStyle="bold|italic"
+        android:text="Longitude:"
+        android:id="@+id/textView03"
+        android:layout_below="@+id/textView01"
+        android:layout_alignLeft="@+id/textView01"
+        android:layout_alignStart="@+id/textView01" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000" android:textSize="18sp" android:textStyle="bold|italic"
+        android:text="unknown"
+        android:id="@+id/textView04"
+        android:layout_below="@+id/textView02"
+        android:layout_toRightOf="@+id/textView03"
+        android:layout_toEndOf="@+id/textView03" />
+
+</RelativeLayout>
