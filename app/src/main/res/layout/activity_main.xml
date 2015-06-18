@@ -11,9 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textColor="#000"
-        android:textSize="24sp"
-        android:fontFamily="bold"
-        android:text="N.A." />
+        android:textSize="24dp"
+        android:text="@string/loc_str" />
 
     <ImageView
         android:id="@+id/imgCompass"
@@ -22,5 +21,61 @@
         android:src="@drawable/compass360"
         android:layout_below="@+id/txtDegrees"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitude: "
+        android:id="@+id/textView1"
+        android:textSize="18dp"
+        android:layout_below="@+id/imgCompass"
+        android:layout_alignLeft="@+id/imgCompass"
+        android:layout_alignStart="@+id/imgCompass"
+        android:textColor="#000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loc_str"
+        android:id="@+id/textView2"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:layout_below="@+id/imgCompass"
+        android:layout_alignLeft="@+id/txtDegrees"
+        android:layout_alignStart="@+id/txtDegrees" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loc_str"
+        android:id="@+id/textView4"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitude: "
+        android:id="@+id/textView3"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignStart="@+id/textView1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heading: "
+        android:id="@+id/textView"
+        android:layout_alignBottom="@+id/txtDegrees"
+        android:layout_toLeftOf="@+id/txtDegrees"
+        android:layout_toStartOf="@+id/txtDegrees"
+        android:textSize="24dp"
+        android:textIsSelectable="false"
+        android:textColor="#000" />
 
 </RelativeLayout>
