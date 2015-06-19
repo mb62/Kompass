@@ -45,17 +45,22 @@ public class MainActivity extends Activity implements SensorEventListener, Conne
     private TextView latitudeField, longitudeField, txtDegrees;
     private ImageView imgCompass;
     private float currentDegree=0f;
-    private SensorManager sensorManager;
+    private SensorManager mSensorManager;
+    Sensor accelerometer;
+    Sensor magnetometer;
 
+    float[] mGravity;
+    float[] mGeomagnetic;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imgCompass=(ImageView)findViewById(R.id.imgCompass);
         txtDegrees=(TextView)findViewById(R.id.txtDegrees);
-        sensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
+        mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+        accelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        magnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
         latitudeField=(TextView)findViewById(R.id.textView2);
         longitudeField=(TextView)findViewById(R.id.textView4);
 
@@ -64,12 +69,8 @@ public class MainActivity extends Activity implements SensorEventListener, Conne
 
             // Building the GoogleApi client
             buildGoogleApiClient();
-
             createLocationRequest();
         }
-
-        displayLocation();
-        startLocationUpdates();
     }
 
     @Override
@@ -90,7 +91,8 @@ public class MainActivity extends Activity implements SensorEventListener, Conne
         if (mGoogleApiClient.isConnected() && mRequestingLocationUpdates) {
             startLocationUpdates();
         }
-        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION), SensorManager.SENSOR_DELAY_GAME);
+        mSensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
@@ -107,26 +109,35 @@ public class MainActivity extends Activity implements SensorEventListener, Conne
         // TODO
         super.onPause();
         stopLocationUpdates();
-        sensorManager.unregisterListener(this);
+        mSensorManager.unregisterListener(this);
     }
 
     @Override
-    public void onSensorChanged(SensorEvent event)
-    {
-        float degree=Math.round(event.values[0]);
-        txtDegrees.setText(Float.toString(degree)+" °");
-        RotateAnimation ra=new RotateAnimation(currentDegree,-degree,Animation.RELATIVE_TO_SELF,0.5f,
-                Animation.RELATIVE_TO_SELF,0.5f);
-        ra.setDuration(120);
-        ra.setFillAfter(true);
-        imgCompass.startAnimation(ra);
-        currentDegree=-degree;
-    }
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {  }
 
-    @Override
-    public void onAccuracyChanged(Sensor p1, int p2)
-    {
-        // TODO
+
+    public void onSensorChanged(SensorEvent event) {
+
+        float azimut;
+        Long degrees;
+
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER)
+            mGravity = event.values;
+        if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD)
+            mGeomagnetic = event.values;
+        if (mGravity != null && mGeomagnetic != null) {
+            float R[] = new float[9];
+            float I[] = new float[9];
+            boolean success = SensorManager.getRotationMatrix(R, I, mGravity, mGeomagnetic);
+            if (success) {
+                float orientation[] = new float[3];
+                SensorManager.getOrientation(R, orientation);
+                azimut = orientation[0]; // orientation contains: azimut, pitch and roll
+                txtDegrees.setText(Float.toString(azimut));
+                //degrees = Math.round(Math.toDegrees(azimut));
+                //txtDegrees.setText(Long.toString(degrees)+" °");
+            }
+        }
     }
 
     /**

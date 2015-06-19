@@ -2,24 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="center"
     android:orientation="vertical" >
 
     <TextView
         android:id="@+id/txtDegrees"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:textColor="#000"
-        android:textSize="24dp"
-        android:text="@string/loc_str" />
-
-    <ImageView
-        android:id="@+id/imgCompass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/compass360"
-        android:layout_below="@+id/txtDegrees"
+        android:textSize="18sp"
+        android:text="@string/loc_str"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_alignTop="@+id/textAzimut"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -27,55 +21,59 @@
         android:layout_height="wrap_content"
         android:text="Latitude: "
         android:id="@+id/textView1"
-        android:textSize="18dp"
-        android:layout_below="@+id/imgCompass"
-        android:layout_alignLeft="@+id/imgCompass"
-        android:layout_alignStart="@+id/imgCompass"
-        android:textColor="#000" />
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:layout_below="@+id/textAzimut"
+        android:layout_alignRight="@+id/textAzimut"
+        android:layout_alignEnd="@+id/textAzimut"
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/loc_str"
         android:id="@+id/textView2"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textColor="#000"
-        android:layout_below="@+id/imgCompass"
-        android:layout_alignLeft="@+id/txtDegrees"
-        android:layout_alignStart="@+id/txtDegrees" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/loc_str"
-        android:id="@+id/textView4"
-        android:textSize="18dp"
-        android:textColor="#000"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:layout_alignTop="@+id/textView1"
+        android:layout_toRightOf="@+id/textAzimut"
+        android:layout_toEndOf="@+id/textAzimut" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Longitude: "
         android:id="@+id/textView3"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textColor="#000"
         android:layout_below="@+id/textView1"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignStart="@+id/textView1" />
+        android:layout_alignRight="@+id/textView1"
+        android:layout_alignEnd="@+id/textView1"
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Heading: "
-        android:id="@+id/textView"
-        android:layout_alignBottom="@+id/txtDegrees"
+        android:text="@string/loc_str"
+        android:id="@+id/textView4"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_toRightOf="@+id/textAzimut"
+        android:layout_toEndOf="@+id/textAzimut" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Azimut: "
+        android:id="@+id/textAzimut"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/txtDegrees"
         android:layout_toStartOf="@+id/txtDegrees"
-        android:textSize="24dp"
-        android:textIsSelectable="false"
-        android:textColor="#000" />
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="50dp" />
 
 </RelativeLayout>
